@@ -26,3 +26,5 @@ Add-VMDvdDrive -VMName $DCVM.Name -Path $ISODiskPath
 #SetDVD Boot
 Set-VMFirmware -VMName $DCVM.Name -FirstBootDevice (Get-VMDvdDrive -VMName $DCVM.name)
 
+#Disabel Secure Boot
+Set-VMFirmware -VMName $VM.Name -EnableSecureBoot Off
